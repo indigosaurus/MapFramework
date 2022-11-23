@@ -14,3 +14,9 @@ document.getElementById('printoutPanel').innerHTML +=
 document.getElementById('printoutPanel').innerHTML +=
     '<b>Map root element</b> <br>' + map.getRootElement().id + '<br>';
 });
+
+map.setView({
+    mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+    center: new Microsoft.Maps.Location(56.063098907470696, -3.5009999275207515),
+    zoom: 15
+});
