@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AbiMap - Bing Map</title>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <link href="MapFramework.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Bing Map</h1>
+       <section> 
+        <div id='printoutPanel'></div>
+        
+        <div id='myMap' style='width: 100vw; height: 80vh;'></div>
+        <script type='text/javascript'>
+           function loadMapScenario() {
+                var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {});
+                document.getElementById('printoutPanel').innerHTML =
+                    '<b>Map height</b> <br>' + map.getHeight() + '<br>';
+                document.getElementById('printoutPanel').innerHTML +=
+                    '<b>Map width</b> <br>' + map.getWidth() + '<br>';
+                document.getElementById('printoutPanel').innerHTML +=
+                    '<b>Map page x</b> <br>' + map.getPageX() + '<br>';
+                document.getElementById('printoutPanel').innerHTML +=
+                    '<b>Map page y</b> <br>' + map.getPageY() + '<br>';
+                document.getElementById('printoutPanel').innerHTML +=
+                    '<b>Map root element</b> <br>' + map.getRootElement().id + '<br>';
+                
+            }
+        </script>
+        <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=YourBingMapsKey&callback=loadMapScenario' async defer></script>
+        </section>
+    </body>
+</html>

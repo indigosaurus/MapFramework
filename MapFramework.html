@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AbiMap</title>
+        <meta http-equiv='Content-Type' content='text/html; charset=utf-8'/>
+        <link href="MapFramework.css" rel="stylesheet">
+    </head>
+    <body>
+        <h1>Abi Map</h1>
+       <section> 
+        <div id='printoutPanel'></div>
+        
+        <div id='myMap' style='width: 100vw; height: 80vh;'></div>
+        <script type='text/javascript'>
+            function loadMapScenario() {
+                var navigationBarMode = Microsoft.Maps.NavigationBarMode;
+                var map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+                    /* No need to set credentials if already passed in URL */
+                    navigationBarMode: navigationBarMode.compact,
+                    supportedMapTypes: [Microsoft.Maps.MapTypeId.road, Microsoft.Maps.MapTypeId.aerial, Microsoft.Maps.MapTypeId.grayscale, Microsoft.Maps.MapTypeId.canvasLight]
+                });
+                
+            }
+        </script>
+        <script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?key=YourBingMapsKey&callback=loadMapScenario' async defer></script>
+        </section>
+    </body>
+</html>
